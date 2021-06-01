@@ -15,6 +15,7 @@ function Main() {
   useEffect(() => {
     (async () => {
       const data = await getCardData();
+      if (data == null) return;
       data[year] && setUserData(data[year][month]);
     })();
   }, [year, month]);
