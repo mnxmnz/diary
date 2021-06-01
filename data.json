@@ -1,0 +1,78 @@
+{
+  "posts": {
+    "data": {
+      "2021": [
+        [],
+        [],
+        [],
+        [],
+        [
+          {
+            "id": 1,
+            "date": 20210501,
+            "title": "다이어리 제목 1",
+            "image": "https://s3-ap-northeast-1.amazonaws.com/dcreviewsresized/20200803040544_photo1_4c37b4380e86.jpg",
+            "weather": "맑음",
+            "tags": ["태그 1-1", "태그 1-2"]
+          },
+          {
+            "id": 2,
+            "date": 20210502,
+            "title": "다이어리 제목 2",
+            "image": "http://image.auction.co.kr/itemimage/17/b3/0f/17b30ff7c6.jpg",
+            "weather": "흐림",
+            "tags": ["태그 2-1"]
+          },
+          {
+            "id": 3,
+            "date": 20210503,
+            "title": "다이어리 제목 3",
+            "image": "https://img.insight.co.kr/static/2017/12/03/700/83ay2m7551656tdgx4i3.jpg",
+            "weather": "맑음",
+            "tags": ["태그 3-1"]
+          },
+          {
+            "id": 4,
+            "date": 20210504,
+            "title": "다이어리 제목 4",
+            "image": "",
+            "weather": "비",
+            "tags": ["태그 4-1"]
+          },
+          {
+            "id": 5,
+            "date": 20210505,
+            "title": "다이어리 제목 5",
+            "image": "https://newsimg.hankookilbo.com/cms/articlerelease/2020/02/16/202002161345397389_1.jpg",
+            "weather": "비",
+            "tags": ["태그 5-1"]
+          },
+          {
+            "id": 6,
+            "date": 20210506,
+            "title": "다이어리 제목 6",
+            "image": "",
+            "weather": "맑음",
+            "tags": ["태그 6-1"]
+          },
+          {
+            "date": 20210508,
+            "title": "",
+            "image": "",
+            "weather": "",
+            "tags": [],
+            "summary": "",
+            "text": ""
+          }
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    }
+  }
+}
