@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 function Footer() {
-  return <FooterWrap>Copyright&copy; 2021. BE SOPT Web part. All rights reserved.</FooterWrap>;
+  return <FooterWrap>Copyright&copy; 2021. BE SOPT Web Part. All rights reserved.</FooterWrap>;
 }
 
 const FooterWrap = styled.div`
