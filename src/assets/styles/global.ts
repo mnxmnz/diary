@@ -14,13 +14,13 @@ const GlobalStyle = createGlobalStyle`
 
   html,
   body {
-    font-family: Roboto;
+    font-family: 'Cafe24SsurroundAir';
     font-size: 10px;
   }
 
   body {
-    padding-left: 18.8vw;
-    padding-right: 18.8vw;
+    display: flex;
+    justify-content: center;
   }
 `;
 

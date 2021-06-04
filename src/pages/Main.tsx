@@ -16,7 +16,7 @@ function Main() {
     (async () => {
       const data = await getCardData();
       if (data == null) return;
-      data[year] && setUserData(data[year][month]);
+      setUserData(data[year][month]);
     })();
   }, [year, month]);
 
@@ -34,6 +34,7 @@ function Main() {
 }
 
 const MainWrap = styled.div`
+  width: 62.5vw;
   display: grid;
   grid-template-columns: repeat(5, auto);
   row-gap: 2.5rem;
