@@ -21,10 +21,6 @@ function Calendar() {
     setYear(year => year + 1);
   };
 
-  const onClickMonth = () => {
-    setMonth(months => months);
-  };
-
   return (
     <>
       <YearWrap>
@@ -35,7 +31,13 @@ function Calendar() {
       <MonthWrap>
         {monthList.map(months => {
           return (
-            <div key={months} onClick={onClickMonth} style={months === month ? { fontSize: '2.2rem', fontWeight: 'bold' } : {}}>
+            <div
+              key={months}
+              onClick={() => {
+                setMonth(month => months);
+              }}
+              style={months === month ? { fontSize: '2.2rem', fontWeight: 'bold' } : {}}
+            >
               {months + 1}월
             </div>
           );
