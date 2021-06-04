@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Card from '../components/main/Card';
 import NewCard from '../components/main/NewCard';
+import { useRecoilValue } from 'recoil';
+import { yearState, monthState } from '../states/index';
 import { getCardData } from '../lib/api';
 import { IData } from '../types';
 
 function Main() {
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth();
+  const year = useRecoilValue(yearState);
+  const month = useRecoilValue(monthState);
 
   const [userData, setUserData] = useState([]);
 

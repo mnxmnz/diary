@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { useRecoilState } from 'recoil';
+import { monthState, yearState } from '../../states/index';
 import { ReactComponent as Left } from '../../assets/icons/Left.svg';
 import { ReactComponent as Right } from '../../assets/icons/Right.svg';
 
 function Calendar() {
-  const now = new Date();
-  const currYear = now.getFullYear();
-  const currMonth = now.getMonth();
-
-  const [year, setYear] = useState(currYear);
-  const [month, setMonth] = useState(currMonth);
+  const [year, setYear] = useRecoilState(yearState);
+  const [month, setMonth] = useRecoilState(monthState);
 
   const monthList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
@@ -55,9 +53,11 @@ const YearWrap = styled.div`
   margin-top: 1rem;
 
   & > p {
+    width: 14rem;
+    margin: 0 2.5rem;
     font-size: 3.6rem;
     font-weight: bold;
-    margin: 0 2.5rem;
+    text-align: center;
   }
 
   &:hover svg line {
