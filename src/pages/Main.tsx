@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Card from '../components/main/Card';
 import NewCard from '../components/main/NewCard';
-import { useRecoilValue } from 'recoil';
-import { yearState, monthState } from '../states/index';
+import { useRecoilValue, useRecoilState } from 'recoil';
+import { yearState, monthState, rawDataState, userDataState } from '../states/index';
 import { getCardData } from '../lib/api';
 import { IData } from '../types';
 
@@ -11,34 +11,35 @@ function Main() {
   const year = useRecoilValue(yearState);
   const month = useRecoilValue(monthState);
 
-  const [userData, setUserData] = useState([]);
+  const [rawData, setRawData] = useRecoilState(rawDataState);
+  const [userData, setUserData] = useRecoilState(userDataState);
 
   useEffect(() => {
     (async () => {
       const data = await getCardData();
+
       if (data == null) return;
+
+      setRawData(data);
       setUserData(data[year][month]);
     })();
   }, [year, month]);
 
   return (
-    <>
-      <MainWrap>
-        {userData &&
-          userData.map((data: IData, index: number) => {
-            return <Card key={index} userData={data} />;
-          })}
-      </MainWrap>
+    <MainWrap>
+      {userData &&
+        userData.map((data: IData, index: number) => {
+          return <Card key={index} userData={data} />;
+        })}
       <NewCard />
-    </>
+    </MainWrap>
   );
 }
 
 const MainWrap = styled.div`
   width: 62.5vw;
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  row-gap: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export default Main;
