@@ -7,8 +7,9 @@ function Card({ userData }: ICardData) {
   const { date, title, image, weather, tags } = userData;
 
   const getDateFormat = (date: number) => {
-    const year = (date % 10000) / 100;
+    const year = Math.floor((date % 10000) / 100);
     const day = date % 100;
+
     return `${year}월 ${day}일`;
   };
 
@@ -35,6 +36,9 @@ const CardWrap = styled.div`
   height: 25.7rem;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 1.5rem;
+  margin-right: 2rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
 `;
 
 const Image = styled.div`
@@ -48,9 +52,11 @@ const Image = styled.div`
 `;
 
 const UserImg = styled.img`
+  width: 22rem;
   height: 14.8rem;
   border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1rem.5rem;
+  border-top-right-radius: 1.5rem;
+  object-fit: cover;
 `;
 
 const Header = styled.div`
@@ -67,9 +73,10 @@ const Weather = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   height: 2.5rem;
   margin: 0 1.2rem;
+  padding-top: 0.4rem;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
