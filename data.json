@@ -15,7 +15,7 @@
             "title": "다이어리 제목 1",
             "image": "https://s3-ap-northeast-1.amazonaws.com/dcreviewsresized/20200803040544_photo1_4c37b4380e86.jpg",
             "weather": "맑음",
-            "tags": ["태그 1-1", "태그 1-2"]
+            "tags": ["태그 1-1"]
           },
           {
             "id": 2,
@@ -56,15 +56,6 @@
             "image": "",
             "weather": "맑음",
             "tags": ["태그 6-1"]
-          },
-          {
-            "date": 20210508,
-            "title": "",
-            "image": "",
-            "weather": "",
-            "tags": [],
-            "summary": "",
-            "text": ""
           }
         ],
         [],

@@ -34,7 +34,7 @@ function Calendar() {
               onClick={() => {
                 setMonth(month => months);
               }}
-              style={months === month ? { fontSize: '2.2rem', fontWeight: 'bold' } : {}}
+              style={months === month ? { fontSize: '2rem', fontWeight: 'bold' } : {}}
             >
               {months + 1}월
             </div>
