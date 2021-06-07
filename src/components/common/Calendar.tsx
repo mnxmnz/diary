@@ -22,9 +22,13 @@ function Calendar() {
   return (
     <>
       <YearWrap>
-        <Left onClick={previousYear} />
+        <HoverStyle>
+          <Left onClick={previousYear} />
+        </HoverStyle>
         <p>{year}년</p>
-        <Right onClick={nextYear} />
+        <HoverStyle>
+          <Right onClick={nextYear} />
+        </HoverStyle>
       </YearWrap>
       <MonthWrap>
         {monthList.map(months => {
@@ -53,13 +57,15 @@ const YearWrap = styled.div`
   margin-top: 1rem;
 
   & > p {
-    width: 14rem;
+    width: 16rem;
     margin: 0 2.5rem;
     font-size: 3.6rem;
     font-weight: bold;
     text-align: center;
   }
+`;
 
+const HoverStyle = styled.div`
   &:hover svg line {
     stroke: black;
     cursor: pointer;
@@ -79,7 +85,7 @@ const MonthWrap = styled.div`
   }
 
   & > div:hover {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
   }
