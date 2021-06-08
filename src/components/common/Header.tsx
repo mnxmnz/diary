@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { ReactComponent as Menu } from '../../assets/icons/Menu.svg';
 import { ReactComponent as Profile } from '../../assets/icons/Profile.svg';
 

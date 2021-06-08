@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ReactComponent as EmptyImg } from '../../assets/icons/Photo.svg';
 import { ICardData } from '../../types';
+import { ReactComponent as EmptyImg } from '../../assets/icons/Photo.svg';
 
 function Card({ userData }: ICardData) {
   const { date, title, image, weather, tags } = userData;

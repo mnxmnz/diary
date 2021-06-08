@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { IData } from '../types';
+import { getCardData } from '../lib/api';
 import Card from '../components/main/Card';
 import NewCard from '../components/main/NewCard';
-import { useRecoilValue, useRecoilState } from 'recoil';
+import { useRecoilValue, useSetRecoilState, useRecoilState } from 'recoil';
 import { yearState, monthState, rawDataState, userDataState } from '../states/index';
-import { getCardData } from '../lib/api';
-import { IData } from '../types';
 
 function Main() {
   const year = useRecoilValue(yearState);
   const month = useRecoilValue(monthState);
 
-  const [rawData, setRawData] = useRecoilState(rawDataState);
+  const setRawData = useSetRecoilState(rawDataState);
+
   const [userData, setUserData] = useRecoilState(userDataState);
 
   useEffect(() => {

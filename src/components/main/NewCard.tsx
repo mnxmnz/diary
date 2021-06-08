@@ -1,16 +1,16 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { useRecoilValue, useRecoilState } from 'recoil';
-import { yearState, monthState, rawDataState, userDataState } from '../../states/index';
-import { createCardData } from '../../lib/api';
 import { IRawData } from '../../types';
+import { createCardData } from '../../lib/api';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { yearState, monthState, rawDataState, userDataState } from '../../states/index';
 
 function NewCard() {
   const year = useRecoilValue(yearState);
   const month = useRecoilValue(monthState);
   const rawData = useRecoilValue(rawDataState);
 
-  const [userData, setUserData] = useRecoilState(userDataState);
+  const setUserData = useSetRecoilState(userDataState);
 
   const nextId = useRef(7);
 
@@ -37,11 +37,11 @@ function NewCard() {
       text: '',
     };
 
-    // rawData[year][month].push(cardForm);
+    rawData[year][month].push(cardForm);
 
-    // const data = await createCardData(rawData);
+    const data = await createCardData(rawData);
 
-    // data[year] && setUserData(data[year][month]);
+    data[year] && setUserData(data[year][month]);
 
     nextId.current += 1;
   };

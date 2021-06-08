@@ -30,7 +30,3 @@ export interface IRawData {
   summary: string;
   text: string;
 }
-
-export interface IRaw {
-  key: string;
-}
