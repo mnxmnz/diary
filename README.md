@@ -59,6 +59,12 @@ yarn
 yarn start
 ```
 
+#### [5] Run JSON Server
+
+```sh
+npx json-server data.json --watch --port 4000
+```
+
 ## :link: URL
 
 - [Diary 바로가기](https://diary-mnxmnz.vercel.app/)
