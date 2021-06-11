@@ -1,16 +1,15 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { IRawData } from '../../types';
+import { IData } from '../../types';
 import { createCardData } from '../../lib/api';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { yearState, monthState, rawDataState, userDataState } from '../../states/index';
+import { useRecoilValue, useRecoilState } from 'recoil';
+import { yearState, monthState, userDataState } from '../../states/index';
 
 function NewCard() {
   const year = useRecoilValue(yearState);
   const month = useRecoilValue(monthState);
-  const rawData = useRecoilValue(rawDataState);
 
-  const setUserData = useSetRecoilState(userDataState);
+  const [userData, setUserData] = useRecoilState(userDataState);
 
   const nextId = useRef(7);
 
@@ -26,7 +25,7 @@ function NewCard() {
   };
 
   const createCard = async () => {
-    const cardForm: IRawData = {
+    const cardForm: IData = {
       date: getDate(),
       id: nextId.current,
       title: '',
@@ -37,13 +36,13 @@ function NewCard() {
       text: '',
     };
 
-    rawData[year][month].push(cardForm);
+    nextId.current += 1;
 
-    const data = await createCardData(rawData);
+    userData.concat(cardForm as any);
+
+    const data = await createCardData(userData as any);
 
     data[year] && setUserData(data[year][month]);
-
-    nextId.current += 1;
   };
 
   return <NewCardWrap onClick={createCard}>+ 추가해주세요</NewCardWrap>;

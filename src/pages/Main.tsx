@@ -1,17 +1,14 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { IData } from '../types';
 import { getCardData } from '../lib/api';
 import Card from '../components/main/Card';
 import NewCard from '../components/main/NewCard';
-import { useRecoilValue, useSetRecoilState, useRecoilState } from 'recoil';
-import { yearState, monthState, rawDataState, userDataState } from '../states/index';
+import { useRecoilValue, useRecoilState } from 'recoil';
+import { yearState, monthState, userDataState } from '../states/index';
 
 function Main() {
   const year = useRecoilValue(yearState);
   const month = useRecoilValue(monthState);
-
-  const setRawData = useSetRecoilState(rawDataState);
 
   const [userData, setUserData] = useRecoilState(userDataState);
 
@@ -21,7 +18,6 @@ function Main() {
 
       if (data == null) return;
 
-      setRawData(data);
       setUserData(data[year][month]);
     })();
   }, [year, month]);
@@ -29,7 +25,7 @@ function Main() {
   return (
     <MainWrap>
       {userData &&
-        userData.map((data: IData, index: number) => {
+        userData.map((data, index) => {
           return <Card key={index} userData={data} />;
         })}
       <NewCard />

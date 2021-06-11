@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { IRawData } from '../types/index';
+import { IData } from '../types/index';
 
 const instance = axios.create({
   baseURL: 'http://localhost:4000',
@@ -15,10 +15,10 @@ export const getCardData = async () => {
   }
 };
 
-export const createCardData = async (rawData: IRawData) => {
+export const createCardData = async (userData: IData) => {
   try {
     const data = await instance.post('/posts', {
-      data: rawData,
+      data: userData,
     });
     return data.data.data;
   } catch (e) {

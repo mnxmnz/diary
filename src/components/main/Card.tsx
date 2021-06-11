@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { ICardData } from '../../types';
 import { ReactComponent as EmptyImg } from '../../assets/icons/Photo.svg';
 
 function Card({ userData }: ICardData) {
-  const { date, title, image, weather, tags } = userData;
+  const { id, date, title, image, weather, tags } = userData;
 
   const getDateFormat = (date: number) => {
     const year = Math.floor((date % 10000) / 100);
@@ -14,19 +15,21 @@ function Card({ userData }: ICardData) {
   };
 
   return (
-    <CardWrap>
-      <Image>{image ? <UserImg src={image} alt="" /> : <EmptyImg />}</Image>
-      <Header>
-        <div>{getDateFormat(date)}</div>
-        <Weather>{weather}</Weather>
-      </Header>
-      <Title>{title ? title : '제목 없음'}</Title>
-      <Tags>
-        {tags.map((tag, index) => {
-          return <Tag key={index}>{tag}</Tag>;
-        })}
-      </Tags>
-    </CardWrap>
+    <Link to={`/detail/${id}`}>
+      <CardWrap>
+        <Image>{image ? <UserImg src={image} alt="" /> : <EmptyImg />}</Image>
+        <Header>
+          <div>{getDateFormat(date)}</div>
+          <Weather>{weather}</Weather>
+        </Header>
+        <Title>{title ? title : '제목 없음'}</Title>
+        <Tags>
+          {tags.map((tag, index) => {
+            return <Tag key={index}>{tag}</Tag>;
+          })}
+        </Tags>
+      </CardWrap>
+    </Link>
   );
 }
 
