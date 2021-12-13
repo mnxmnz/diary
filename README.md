@@ -1,8 +1,10 @@
-## Diary 📝
+## About The Repository
 
-Web Part Seminar 4차, 7차 개인 과제 <b>Diary 📝</b> 레포입니다.
+#### Web Part Seminar 4차, 7차 개인 과제 Diary 📝 레포입니다.
 
-## 🛠 사용 기술
+<br />
+
+## Built With
 
 ```
 "dependencies": {
@@ -31,13 +33,17 @@ Web Part Seminar 4차, 7차 개인 과제 <b>Diary 📝</b> 레포입니다.
 }
 ```
 
-## 🖥 Local 실행 방법
+<br />
 
-#### [1] NPM & Node.js 설치
+## Getting Started
 
-[NPM & Node.js 설치 바로가기](https://www.npmjs.com/get-npm)
+#### Prerequisites
 
-#### [2] Clone the Repo
+```
+npm install --global yarn
+```
+
+1. Clone the Repo
 
 ```sh
 git clone https://github.com/mnxmnz/Diary.git
@@ -47,25 +53,27 @@ git clone https://github.com/mnxmnz/Diary.git
 cd Diary
 ```
 
-#### [3] Install Project Packages
+2. Install Project Packages
 
 ```sh
 yarn
 ```
 
-#### [4] Run the Project
+3. Run the Project (Dev Mode)
 
 ```sh
 yarn start
+
+http://localhost:3000/
 ```
 
-#### [5] Run JSON Server
+4. Run JSON Server
 
 ```sh
 npx json-server data.json --watch --port 4000
 ```
 
-## :link: URL
+<br />
 
-- [Diary 바로가기](https://diary-mnxmnz.vercel.app/)
-- 😥 현재 위 사이트는 접속할 수 있지만, 서버가 꺼진 상태입니다. 퍼블리싱 외에 정보가 표현되지 않습니다.
+#### 🔗 [SOPT Site](http://sopt.org/wp/)
+#### 🔗 [SOPT Instagram](https://www.instagram.com/sopt_official/)
